@@ -1,7 +1,7 @@
-import { GameCell } from './game-cell';
-import { GameInfo } from './game-info';
-import ResetButton from './reset-button';
-import { useGameState } from './use-game-state';
+import { GameCell } from "./game-cell";
+import { GameInfo } from "./game-info";
+import ResetButton from "./reset-button";
+import { useGameState } from "./use-game-state";
 
 export function Game() {
   const {
