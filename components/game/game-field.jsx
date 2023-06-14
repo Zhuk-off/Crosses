@@ -1,9 +1,7 @@
 import clsx from "clsx";
-import React, { useState } from "react";
+import React from "react";
 import { UiButton } from "../uikit/ui-button";
-import { GAME_SYMBOLS, MOVE_ORDER } from "./constants";
 import { GameSymbol } from "./game-symbol";
-import useGameState from "./use-game-state";
 
 export function GameField({
   className,
@@ -12,6 +10,7 @@ export function GameField({
   nextMove,
   handleCellClick,
   winnerSequence,
+  winnerSymbol
 }) {
   const actions = (
     <>
@@ -36,6 +35,7 @@ export function GameField({
             key={index}
             onClick={() => handleCellClick(index)}
             isWinner={winnerSequence?.includes(index)}
+            disabled={!!winnerSymbol}
           >
             {symbol && <GameSymbol symbol={symbol} className={"w-5 h-5"} />}
           </GameCell>
@@ -82,9 +82,10 @@ function GameGrid({ children }) {
   );
 }
 
-function GameCell({ children, onClick, isWinner }) {
+function GameCell({ children, onClick, isWinner, disabled }) {
   return (
     <button
+      disabled={disabled}
       onClick={onClick}
       className={clsx(
         "border border-slate-200 h-[30px] w-[30px] -ml-px -mt-px flex items-center justify-center",
