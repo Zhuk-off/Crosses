@@ -12,9 +12,9 @@ export function computeWinner(cells, sequenceSize = 5, fieldSize = 19) {
 
   function getSequenceIndexes(i) {
     const res = [
-      [], // -
-      [], // \
-      [], // /
+      [],
+      [],
+      [],
       [], // |
     ];
     for (let j = 0; j < sequenceSize; j++) {

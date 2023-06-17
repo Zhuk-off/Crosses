@@ -10,7 +10,7 @@ export function GameField({
   nextMove,
   handleCellClick,
   winnerSequence,
-  winnerSymbol
+  winnerSymbol,
 }) {
   const actions = (
     <>
