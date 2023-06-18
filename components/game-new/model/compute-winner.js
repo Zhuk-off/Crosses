@@ -40,7 +40,6 @@ export function computeWinner(gameState, sequenceSize = 5, fieldSize = 19) {
     if (cells[i]) {
       const indexRows = getSequenceIndexes(i);
       const winnerIndexes = indexRows.find((row) => compareElements(row));
-      console.log(winnerIndexes);
       if (winnerIndexes) {
         return winnerIndexes;
       }
