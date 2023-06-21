@@ -1,6 +1,8 @@
 import { Header } from "../components/header";
 import { Game } from "../components/game-new";
 import { UiTextField } from "../components/uikit/ui-text-field";
+import { UiSelect } from "../components/uikit/fields/ui-selects";
+import { UiSelectField } from "../components/uikit/fields/ui-select-field";
 
 export default function HomePage() {
   return (
@@ -13,6 +15,16 @@ export default function HomePage() {
         required
         errorText="dfdsadf"
         
+      />
+     <UiSelectField
+        label="Label"
+        placeholder="Placeholder"
+        required
+        helperText="Helper text"
+        options={[
+          { label: "Первый label", value: 1 },
+          { label: "Второй label", value: 2 },
+        ]}
       />
     </HomePageLayout>
   );

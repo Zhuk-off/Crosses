@@ -23,7 +23,7 @@ export function UiTextField({
     <div className={clsx(className)}>
       {label && (
         <label
-          for="example2"
+          htmlFor="example2"
           className={clsx(
             required && `after:text-orange-600 after:content-["*"]`,
             `mb-1 block text-sm font-medium text-slate-900 after:ml-0.5 `
